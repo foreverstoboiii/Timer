@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Анимация заднего фона — дышащий градиент */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Фон body — премиум тень и живой фон */
+.animated-bg {
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #2e2e2e, #121212);
+  background-size: 400% 400%;
+  animation: gradientMove 25s ease infinite;
+}
+
+/* Контейнер секундомера — стекло и статус */
+.glass-container {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1rem;
+}
+
+/* Кнопки с плавным градиентом */
+.btn-gradient {
+  @apply flex-1 py-2.5 rounded-lg text-sm font-semibold uppercase tracking-wider text-white
+    bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700
+    shadow-inner hover:shadow-lg hover:from-zinc-600 hover:to-zinc-500
+    transition duration-300 ease-in-out;
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease-in-out infinite;
+}
+
+/* Кнопка Reset — строгий вид */
+.btn-border {
+  @apply flex-1 py-2.5 rounded-lg text-sm font-semibold uppercase tracking-wider
+    text-white border border-white/20
+    hover:bg-white/10 transition duration-200;
+}
+
+/* При нажатии — мягкая реакция */
+.btn-gradient:active,
+.btn-border:active {
+  @apply scale-95;
+}

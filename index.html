@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>2090 Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body class="animated-bg min-h-screen flex items-center justify-center text-white font-sans">
+
+    <div class="glass-container w-full max-w-sm mx-auto p-6 rounded-2xl shadow-2xl border border-white/10 backdrop-blur-lg relative">
+      <h1 class="text-center text-sm font-medium tracking-wide text-white/70 mb-6 uppercase"> Stopwatch</h1>
+
+      <div id="display" class="text-center text-5xl font-bold tracking-widest text-white mb-8">
+        00:00.00
+      </div>
+
+      <div class="flex justify-between gap-4">
+        <button onclick="start()" class="btn-gradient">Start</button>
+        <button onclick="pause()" class="btn-gradient">Pause</button>
+        <button onclick="reset()" class="btn-border">Reset</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
